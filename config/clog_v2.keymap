@@ -44,8 +44,6 @@
     MACRO(win_delword,    &kp LC(RIGHT) &kp LS(LC(LEFT)) &kp BSPC);
     MACRO(mac_delword,    &kp LA(RIGHT) &kp LS(LA(LEFT)) &kp BSPC);
     MACRO(mac_finder,     &kp LG(SPACE) &macro_wait_time 1 &kp F &kp I &kp N &kp D &kp E &kp R &kp ENTER);
-    MACRO(nav_lock,       &to 0 &to NAV);
-    MACRO(nav_lock_mac,   &to 0 &to _MAC &to NAV);
 
     // TAP DANCES: tapping_term, bindings...
     DOUBLE_TAP(lt_lte,    TAP_DANCE_FAST,   &kp LT,         &less_eql);
@@ -86,13 +84,13 @@
                             LH1 LH0 | RH0 RH1               
     --------------------------------------------------------- */
     #define ALL_LAYERS COMBO_ALL
-    #define BASE_LAYERS BASE _MAC 
     #define BASE_MAC BASE _MAC 
     #define NAV_MAC NAV _MAC_NAV 
    
     // horizontal combos
-    COMBO(tab         ,&kp TAB          ,LT3 LT2   ,COMBO_FAST_MS   ,ALL_LAYERS);
-    COMBO(esc0        ,&kp ESC          ,LM1 LM2   ,COMBO_FAST_MS   ,BASE_LAYERS);
+    COMBO(tab         ,&kp TAB          ,LM1 LM2   ,COMBO_FAST_MS   ,BASE_MAC);
+    COMBO(esc0        ,&kp ESC          ,LM0 LM1   ,COMBO_FAST_MS   ,BASE);
+    COMBO(esc1        ,&kp ESC          ,RM0 RM1   ,COMBO_FAST_MS   ,BASE);
     COMBO(win_copy    ,WIN_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE);
     COMBO(win_delword ,&win_delword     ,RT1 RT3   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_copy    ,MAC_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE_MAC);
@@ -103,21 +101,20 @@
     COMBO(screenshot  ,&kp LG(LS(S))    ,LM2 LM3   ,COMBO_SLOW_MS   ,NAV _MAC_NAV);
      
     // vertical combos
-    COMBO(lbkt        ,&kp LBKT         ,LT3 LM3,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(lbrc        ,&kp LBRC         ,LT2 LM2,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(lpar        ,&kp LPAR         ,LT1 LM1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(rpar        ,&rpar_morph      ,RT1 RM1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(rbrc        ,&rbrc_morph      ,RT2 RM2,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(rbkt        ,&kp RBKT         ,RT3 RM3,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(under       ,&kp UNDER        ,LB1 LM1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(minus       ,&kp MINUS        ,RB1 RM1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(equal       ,&eql_neql        ,LT0 LM0,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(under1      ,&kp UNDER        ,RT0 RM0,   COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(lbkt        ,&kp LBKT         ,LT3 LM3   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(lbrc        ,&kp LBRC         ,LT2 LM2   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(lpar        ,&kp LPAR         ,LT1 LM1   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(rpar        ,&rpar_morph      ,RT1 RM1   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(rbrc        ,&rbrc_morph      ,RT2 RM2   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(rbkt        ,&kp RBKT         ,RT3 RM3   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(under       ,&kp UNDER        ,LB1 LM1   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(minus       ,&kp MINUS        ,RB1 RM1   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(equal       ,&eql_neql        ,LT0 LM0   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(under1      ,&kp UNDER        ,RT0 RM0   ,COMBO_SLOW_MS,   COMBO_ALL);
 
     // thumb combos
-    COMBO(esc         ,&kp ESC          ,LH0 LH1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(esc2        ,&kp ESC          ,RH0 RH1,   COMBO_SLOW_MS,   COMBO_ALL);
-    COMBO(tog_adj     ,&smo ADJ         ,LH1 LH0 RH0 RH1,   COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(tog_adj     ,&smo ADJ         ,LH1 LH0 RH0 RH1   ,COMBO_SLOW_MS,   COMBO_ALL);
+    COMBO(tog_nav     ,&to NAV          ,RH0 RM1 RM2       ,COMBO_SLOW_MS,   COMBO_ALL);
     };
 
 
@@ -176,7 +173,7 @@
 //            ╭───────────┬───────────┬───────────┬───────────┬───────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────╮
                 &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LA(TAB)        _____       _____      _____       _____    &win_sleep
 //                                                ╭───────────┬───────────╮   ╭───────────┬───────────╮
-                                                     &kp LGUI   &key_repeat         _____    &nav_lock
+                                                     &kp LGUI   &key_repeat         _____      _____ 
             >;
         };
 
@@ -189,7 +186,7 @@
 //            ╭───────────┬───────────┬───────────┬───────────┬───────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────╮
                 &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)     _____            _____       _____      _____       _____    &kp LG(LA(S)) 
 //                                                ╭───────────┬───────────╮   ╭───────────┬───────────╮
-                                                  &kp LG(SPACE)   _____            _____   &nav_lock_mac 
+                                                  &kp LG(SPACE)   _____            _____       _____ 
             >;
         };
                 
