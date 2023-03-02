@@ -41,8 +41,6 @@
     MACRO(greater_eql,    &kp GREATER_THAN &kp EQUAL);
     MACRO(not_eql,        &kp EXCL         &kp EQUAL);
     MACRO(period_spc,     &kp DOT   &kp SPACE  &skp LSHFT);
-    MACRO(win_delword,    &kp LC(RIGHT) &kp LS(LC(LEFT)) &kp BSPC);
-    MACRO(mac_delword,    &kp LA(RIGHT) &kp LS(LA(LEFT)) &kp BSPC);
     MACRO(mac_finder,     &kp LG(SPACE) &macro_wait_time 1 &kp F &kp I &kp N &kp D &kp E &kp R &kp ENTER);
 
     // TAP DANCES: tapping_term, bindings...
@@ -92,10 +90,8 @@
     COMBO(esc0        ,&kp ESC          ,LM0 LM1   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(esc1        ,&kp ESC          ,RM0 RM1   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(win_copy    ,WIN_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE);
-    COMBO(win_delword ,&win_delword     ,RT1 RT3   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_copy    ,MAC_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE_MAC);
-    COMBO(mac_delword ,&mac_delword     ,RT1 RT3   ,COMBO_FAST_MS   ,BASE_MAC);
-    COMBO(bspc        ,&bspc_morph      ,RT2 RT3   ,COMBO_FAST_MS   ,ALL_LAYERS);
+    COMBO(bspc        ,&bspc_morph      ,RM2 RM3   ,COMBO_FAST_MS   ,ALL_LAYERS);
     COMBO(win_enter   ,LP_CTRL(ENTER)   ,RM1 RM2   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_enter   ,LP_GUI(ENTER)    ,RM1 RM2   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(screenshot  ,&kp LG(LS(S))    ,LM2 LM3   ,COMBO_SLOW_MS   ,NAV _MAC_NAV);
