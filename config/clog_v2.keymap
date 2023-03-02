@@ -114,7 +114,7 @@
 
     // thumb combos
     COMBO(tog_adj     ,&smo ADJ         ,LH1 LH0 RH0 RH1   ,COMBO_SLOW_MS,   ALL_LAYERS);
-    COMBO(tog_nav     ,&tog NAV         ,RH0 RM1 RM2       ,COMBO_SLOW_MS,   ALL_LAYERS);
+    COMBO(tog_nav     ,&tog NAV         ,RM0 RM1 RM2       ,COMBO_SLOW_MS,   ALL_LAYERS);
     };
 
 
@@ -150,7 +150,7 @@
 //            ╭───────────┬───────────┬───────────┬───────────┬───────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────╮
                    _____     &kp HASH    &kp AT      &kp EXCL    &lt_lte         &gt_gte     AS(N1)       AS(N2)     AS(N3)     &kp BSLH
 //                                                ╭───────────┬───────────╮   ╭───────────┬───────────╮
-                                                      _____        _____          _____       &kp N0
+                                                      _____        _____          &kp N0     &kp DOT
             >;
         };
         
