@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: sporkus
-      revision: main
+      revision: add-led-widget
       import: app/west.yml
   self:
     path: config
