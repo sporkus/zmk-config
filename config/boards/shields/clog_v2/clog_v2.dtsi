@@ -59,9 +59,31 @@
         boot {
             boot {
                 priority = <100>;
-                blue { len-ms = <100>; brightness = <0 0 1>; };
+                blue { len-ms = <100>; brightness = <0 0 50>; };
                 off { len-ms = <100>; };
-                blue2 { len-ms = <100>; brightness = <0 0 1>; };
+                blue2 { len-ms = <100>; brightness = <0 0 50>; };
+            };
+        };
+        layer {
+            lower {
+                arg = <1>;
+                priority = <20>;
+                stat { brightness = <0 0 20>; };
+            };
+            raise {
+                arg = <2>;
+                priority = <20>;
+                stat { brightness = <0 20 0>; };
+            };
+            game {
+                arg = <3>;
+                priority = <20>;
+                stat { brightness = <0 0 50>; };
+            };
+            steno {
+                arg = <4>;
+                priority = <20>;
+                stat { brightness = <50 0 0>; };
             };
         };
     };
