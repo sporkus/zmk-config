@@ -89,8 +89,8 @@
    
     // horizontal combos
     COMBO(tab         ,&kp TAB          ,LM1 LM2   ,COMBO_FAST_MS   ,BASE_MAC);
-    COMBO(esc0        ,&kp ESC          ,LM0 LM1   ,COMBO_FAST_MS   ,BASE);
-    COMBO(esc1        ,&kp ESC          ,RM0 RM1   ,COMBO_FAST_MS   ,BASE);
+    COMBO(esc0        ,&kp ESC          ,LM0 LM1   ,COMBO_FAST_MS   ,BASE_MAC);
+    COMBO(esc1        ,&kp ESC          ,RM0 RM1   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(win_copy    ,WIN_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE);
     COMBO(win_delword ,&win_delword     ,RT1 RT3   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_copy    ,MAC_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE_MAC);
@@ -114,7 +114,7 @@
 
     // thumb combos
     COMBO(tog_adj     ,&smo ADJ         ,LH1 LH0 RH0 RH1   ,COMBO_SLOW_MS,   ALL_LAYERS);
-    COMBO(tog_nav     ,&tog NAV         ,RM0 RM1 RM2       ,COMBO_SLOW_MS,   ALL_LAYERS);
+    COMBO(tog_nav     ,&tog NAV         ,RM0 RM1 RM2       ,COMBO_SLOW_MS,   BASE_MAC);
     };
 
 
@@ -150,7 +150,7 @@
 //            ╭───────────┬───────────┬───────────┬───────────┬───────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────╮
                    _____     &kp HASH    &kp AT      &kp EXCL    &lt_lte         &gt_gte     AS(N1)       AS(N2)     AS(N3)     &kp BSLH
 //                                                ╭───────────┬───────────╮   ╭───────────┬───────────╮
-                                                      _____        _____          &kp N0     &kp DOT
+                                                      _____        _____          &kp N0     _____
             >;
         };
         
