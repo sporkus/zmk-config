@@ -10,6 +10,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        zmk,led-widgets-dev = &leds;
     };
 
     default_transform: keymap_transform_0 {
@@ -24,7 +25,6 @@
         >;
     };
 
-
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
@@ -36,6 +36,34 @@
             , <&xiao_d 8  GPIO_ACTIVE_HIGH>
             , <&xiao_d 7  GPIO_ACTIVE_HIGH>
             ;
+    };
+
+    leds: leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
+			label = "Red LED";
+		};
+		led1: led_1 {
+			gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;
+			label = "Green LED";
+		};
+		led2: led_2 {
+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+			label = "Blue LED";
+		};
+	};
+
+    led-widgets {
+        compatible = "zmk,led-widgets";
+        boot {
+            boot {
+                priority = <100>;
+                blue { len-ms = <100>; brightness = <0 0 1>; };
+                off { len-ms = <100>; };
+                blue2 { len-ms = <100>; brightness = <0 0 1>; };
+            };
+        };
     };
 
 	left_encoder: encoder_left {
