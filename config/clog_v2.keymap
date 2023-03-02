@@ -91,7 +91,8 @@
     COMBO(esc1        ,&kp ESC          ,RM0 RM1   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(win_copy    ,WIN_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_copy    ,MAC_COPY         ,LB1 LB2   ,COMBO_FAST_MS   ,BASE_MAC);
-    COMBO(bspc        ,&bspc_morph      ,RM2 RM3   ,COMBO_FAST_MS   ,ALL_LAYERS);
+    COMBO(bspc        ,&bspc_morph      ,RM2 RM3   ,COMBO_FAST_MS   ,BASE_MAC);
+    COMBO(del         ,&kp DEL          ,RM2 RM3   ,COMBO_FAST_MS   ,NAV_MAC);
     COMBO(win_enter   ,LP_CTRL(ENTER)   ,RM1 RM2   ,COMBO_FAST_MS   ,BASE);
     COMBO(mac_enter   ,LP_GUI(ENTER)    ,RM1 RM2   ,COMBO_FAST_MS   ,BASE_MAC);
     COMBO(screenshot  ,&kp LG(LS(S))    ,LM2 LM3   ,COMBO_SLOW_MS   ,NAV _MAC_NAV);
