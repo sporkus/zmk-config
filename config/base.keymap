@@ -52,6 +52,11 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 &trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans,
 &kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
 
+#define _FN \
+&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC) & kp LC(BSPC),
+&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans,
+&kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
+
 #define L_TOP_ROW(layer) _L_TOP_ROW(layer)
 #define R_TOP_ROW(layer) _R_TOP_ROW(layer)
 #define L_MID_ROW(layer) _L_MID_ROW(layer)
