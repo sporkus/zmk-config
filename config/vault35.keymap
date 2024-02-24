@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include "../zmk-nodefree-config/helper.h"
+/* #include "../zmk-nodefree-config/helper.h" */
 #include "../zmk-nodefree-config/keypos_def/keypos_vault35.h"
 
 /* layer and key shortcuts */
@@ -24,7 +24,7 @@
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <125>;
+    quick-tap-ms = <200>;
     bindings = <&kp>, <&kp>;
 )
 
@@ -57,3 +57,10 @@ ___, ___, ___, ___, ___, ___, ___, ___, ___, ___,
 ___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
                ___, ___, ___, ___
 )
+
+// combos
+#undef COMBO_TERM
+#define COMBO_TERM 40  
+ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, NAV)  
+ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  
+ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  
