@@ -7,8 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-/* #include "../zmk-nodefree-config/helper.h" */
-#include "../zmk-nodefree-config/keypos_def/keypos_vault35.h"
+#include "./zmk-nodefree-config/helper.h"
+#include "./zmk-nodefree-config/keypos_def/keypos_vault35.h"
 
 /* layer and key shortcuts */
 
