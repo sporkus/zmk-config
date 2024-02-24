@@ -14,29 +14,29 @@
 /* keymap */
 
 ZMK_LAYER(default_layer,
-    LEFT_TOP_ROW(DEF),                RIGHT_TOP_ROW(DEF), &kp BSPC,
-    LEFT_MID_ROW(DEF),                RIGHT_MID_ROW(DEF),
-    LEFT_BOT_ROW(DEF),                RIGHT_BOT_ROW(DEF),
+    L_TOP_ROW(DEF),                R_TOP_ROW(DEF), &kp BSPC,
+    L_MID_ROW(DEF),                R_MID_ROW(DEF),
+    L_BOT_ROW(DEF),                R_BOT_ROW(DEF),
     &kp LCTRL   &lt_hold NUM SPACE    &lt_tap NAV SPACE   &kp LGUI
 )
 
 ZMK_LAYER(num_layer,
-    LEFT_TOP_ROW(NUM),                RIGHT_TOP_ROW(NUM), &trans,
-    LEFT_MID_ROW(NUM),                RIGHT_MID_ROW(NUM),
-    LEFT_BOT_ROW(NUM),                RIGHT_BOT_ROW(NUM),
+    L_TOP_ROW(NUM),                R_TOP_ROW(NUM), &trans,
+    L_MID_ROW(NUM),                R_MID_ROW(NUM),
+    L_BOT_ROW(NUM),                R_BOT_ROW(NUM),
                     ___  ___  ___  ___
 )
 
 ZMK_LAYER(nav_layer,
-    LEFT_TOP_ROW(NAV),                RIGHT_TOP_ROW(NAV), &trans,
-    LEFT_MID_ROW(NAV),                RIGHT_MID_ROW(NAV),
-    LEFT_BOT_ROW(NAV),                RIGHT_BOT_ROW(NAV),
+    L_TOP_ROW(NAV),                R_TOP_ROW(NAV), &trans,
+    L_MID_ROW(NAV),                R_MID_ROW(NAV),
+    L_BOT_ROW(NAV),                R_BOT_ROW(NAV),
                     ___  ___  ___  ___
 )
 
 ZMK_LAYER(fn_layer,
-    LEFT_TOP_ROW(FN),                RIGHT_TOP_ROW(FN), &trans,
-    LEFT_MID_ROW(FN),                RIGHT_MID_ROW(FN),
-    LEFT_BOT_ROW(FN),                RIGHT_BOT_ROW(FN),
+    L_TOP_ROW(FN),                R_TOP_ROW(FN), &trans,
+    L_MID_ROW(FN),                R_MID_ROW(FN),
+    L_BOT_ROW(FN),                R_BOT_ROW(FN),
                     ___  ___  ___  ___
 )
