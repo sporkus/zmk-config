@@ -61,6 +61,5 @@ ___  ___  ___  ___  ___  ___  ___  ___  ___  ___
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 40  
-ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, NAV)  
-ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  
-ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  
+ZMK_COMBO(combo_copy,   &kp LC(INS),  LB2 LB3, ALL)  
+ZMK_COMBO(combo_paste,  &kp LS(INS),  LB1 LB2, ALL)  
