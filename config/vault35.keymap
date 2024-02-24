@@ -9,57 +9,34 @@
 
 #include "./zmk-nodefree-config/helper.h"
 #include "./zmk-nodefree-config/keypos_def/keypos_vault35.h"
-
-/* layer and key shortcuts */
-
-#define ___ &trans
-
-#define DEF 0  // layer shortcuts, must match order in which they are defined below
-#define NUM 1
-#define NAV 2
-#define FN  3
-
-/* Behaviors */
-
-ZMK_BEHAVIOR(hrm, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <200>;
-    bindings = <&kp>, <&kp>;
-)
+#include "./base.keymap"
 
 /* keymap */
 
 ZMK_LAYER(default_layer,
-          &kp Q          &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
-          &hrm LSHFT A   &hrm LALT S   &hrm LGUI D   &hrm LCTRL F  &kp G             &kp H         &hrm LCTRL J  &hrm LGUI K   &hrm LALT L   &hrm LSHFT SQT 
-          &kp Z          &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH 
-                         &kp LCTRL                   &lt NUM SPACE                   &lt NAV SPACE                             &kp LGUI
+    LEFT_TOP_ROW(DEF),                RIGHT_TOP_ROW(DEF), &kp BSPC,
+    LEFT_MID_ROW(DEF),                RIGHT_MID_ROW(DEF),
+    LEFT_BOT_ROW(DEF),                RIGHT_BOT_ROW(DEF),
+    &kp LCTRL   &lt_hold NUM SPACE    &lt_tap NAV SPACE   &kp LGUI
 )
 
 ZMK_LAYER(num_layer,
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-               ___  ___  ___  ___
+    LEFT_TOP_ROW(NUM),                RIGHT_TOP_ROW(NUM), &trans,
+    LEFT_MID_ROW(NUM),                RIGHT_MID_ROW(NUM),
+    LEFT_BOT_ROW(NUM),                RIGHT_BOT_ROW(NUM),
+                    ___  ___  ___  ___
 )
 
 ZMK_LAYER(nav_layer,
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-               ___  ___  ___  ___
+    LEFT_TOP_ROW(NAV),                RIGHT_TOP_ROW(NAV), &trans,
+    LEFT_MID_ROW(NAV),                RIGHT_MID_ROW(NAV),
+    LEFT_BOT_ROW(NAV),                RIGHT_BOT_ROW(NAV),
+                    ___  ___  ___  ___
 )
 
-ZMK_LAYER(fn_layer, 
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-___  ___  ___  ___  ___  ___  ___  ___  ___  ___  
-               ___  ___  ___  ___
+ZMK_LAYER(fn_layer,
+    LEFT_TOP_ROW(FN),                RIGHT_TOP_ROW(FN), &trans,
+    LEFT_MID_ROW(FN),                RIGHT_MID_ROW(FN),
+    LEFT_BOT_ROW(FN),                RIGHT_BOT_ROW(FN),
+                    ___  ___  ___  ___
 )
-
-// combos
-#undef COMBO_TERM
-#define COMBO_TERM 40  
-ZMK_COMBO(combo_copy,   &kp LC(INS),  LB2 LB3, ALL)  
-ZMK_COMBO(combo_paste,  &kp LS(INS),  LB1 LB2, ALL)  

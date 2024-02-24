@@ -1,0 +1,67 @@
+#define DEF 0
+#define NUM 1
+#define NAV 2
+#define FN 3
+
+#include "combos.dtsi"  // requires layer aliases
+
+/* Behaviors */
+#define QUICK_TAP_MS 200
+
+ZMK_BEHAVIOR(hrm, hold_tap, \
+    flavor = "balanced"; \
+    tapping-term-ms = <280>; \
+    quick-tap-ms = <QUICK_TAP_MS>; \
+    require-prior-idle-ms = <180>; \
+    bindings = &kp, &kp; \
+    hold-trigger-on-release; \
+)
+
+ZMK_BEHAVIOR(lt_tap, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>; \
+    require-prior-idle-ms = <180>; \
+    bindings = <&kp>, <&kp>;
+)
+
+ZMK_BEHAVIOR(lt_hold, hold_tap,
+    flavor = "hold-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <200>;
+    bindings = <&kp>, <&kp>;
+)
+
+/* Layer helpers */
+
+#define XXX &none
+#define ___ &trans
+
+#define _BASE \
+&kp Q                 &kp W       &kp E       &kp R        &kp T,             &kp Y     &kp U        &kp I       &kp O       &kp P,
+&hrm LSHFT A          &hrm LALT S &hrm LGUI D &hrm LCTRL F &kp G,             &kp H     &hrm LCTRL J &hrm LGUI K &hrm LALT L &hrm LSHFT SINGLE_QUOTE,
+&shift_t LEFT_SHIFT Z &kp X       &kp C       &kp V        &kp B,             &kp N     &kp M        &kp COMMA   &kp DOT     &shift_t RIGHT_SHIFT SLASH
+
+#define _NUM \
+&trans                &trans      &trans      &trans       &trans,            &kp EQUAL &kp N7       &kp N8      &kp N9      &kp N0,
+&trans                &trans      &trans      &trans       &trans,            &kp MINUS &kp N4       &kp N5      &kp N6      &kp SEMI,
+&trans                &trans      &trans      &trans       &trans,            &kp GRAVE &kp N1       &kp N2      &kp N3      &kp BSLH
+
+#define _NAV \
+&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC) & kp LC(BSPC),
+&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans,
+&kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
+
+#define LEFT_TOP_ROW(layer) _LEFT_TOP_ROW(layer)
+#define RIGHT_TOP_ROW(layer) _RIGHT_TOP_ROW(layer)
+#define LEFT_MID_ROW(layer) _LEFT_MID_ROW(layer)
+#define RIGHT_MID_ROW(layer) _RIGHT_MID_ROW(layer)
+#define LEFT_BOT_ROW(layer) _LEFT_BOT_ROW(layer)
+#define RIGHT_BOT_ROW(layer) _RIGHT_BOT_ROW(layer)
+
+#define   _LEFT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LTR
+#define   _RIGHT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RTR
+#define   _LEFT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LMR
+#define   _RIGHT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RMR
+#define   _LEFT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LBR
+#define   _RIGHT_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RBR
