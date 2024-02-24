@@ -38,23 +38,23 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 #define ___ &trans
 
 #define _BASE \
-&kp Q                 &kp W       &kp E       &kp R        &kp T,             &kp Y     &kp U        &kp I       &kp O       &kp P,
-&hrm LSHFT A          &hrm LALT S &hrm LGUI D &hrm LCTRL F &kp G,             &kp H     &hrm LCTRL J &hrm LGUI K &hrm LALT L &hrm LSHFT SINGLE_QUOTE,
+&kp Q                 &kp W       &kp E       &kp R        &kp T,             &kp Y     &kp U        &kp I       &kp O       &kp P, \
+&hrm LSHFT A          &hrm LALT S &hrm LGUI D &hrm LCTRL F &kp G,             &kp H     &hrm LCTRL J &hrm LGUI K &hrm LALT L &hrm LSHFT SINGLE_QUOTE, \
 &shift_t LEFT_SHIFT Z &kp X       &kp C       &kp V        &kp B,             &kp N     &kp M        &kp COMMA   &kp DOT     &shift_t RIGHT_SHIFT SLASH
 
 #define _NUM \
-&trans                &trans      &trans      &trans       &trans,            &kp EQUAL &kp N7       &kp N8      &kp N9      &kp N0,
-&trans                &trans      &trans      &trans       &trans,            &kp MINUS &kp N4       &kp N5      &kp N6      &kp SEMI,
+&trans                &trans      &trans      &trans       &trans,            &kp EQUAL &kp N7       &kp N8      &kp N9      &kp N0, \
+&trans                &trans      &trans      &trans       &trans,            &kp MINUS &kp N4       &kp N5      &kp N6      &kp SEMI, \
 &trans                &trans      &trans      &trans       &trans,            &kp GRAVE &kp N1       &kp N2      &kp N3      &kp BSLH
 
 #define _NAV \
-&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC) & kp LC(BSPC),
-&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans,
+&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC), \
+&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
 &kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
 
 #define _FN \
-&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC) & kp LC(BSPC),
-&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans,
+&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC), \
+&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
 &kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
 
 #define L_TOP_ROW(layer) _L_TOP_ROW(layer)
