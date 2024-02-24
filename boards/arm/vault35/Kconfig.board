@@ -1,0 +1,2 @@
+config BOARD_VAULT35
+    bool "Vault35 (RP2040)"

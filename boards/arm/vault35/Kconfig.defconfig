@@ -1,0 +1,13 @@
+if BOARD_VAULT35
+
+config BOARD
+    default "vault35"
+    depends on SOC_RP2040
+
+config ZMK_KEYBOARD_NAME
+    default "Vault 35"
+
+config RP2_FLASH_W25Q080
+	default y
+    
+endif

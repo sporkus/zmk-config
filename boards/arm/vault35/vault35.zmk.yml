@@ -1,0 +1,10 @@
+file_format: "1"
+id: vault35
+name: Vault 35 (RP2040)
+type: board
+arch: arm
+features:
+  - encoders
+outputs:
+  - usb
+url: https://mechvault.net/

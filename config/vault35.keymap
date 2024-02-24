@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_vault35.h"
+
+/* layer and key shortcuts */
+
+#define ___ &trans
+
+#define DEF 0  // layer shortcuts, must match order in which they are defined below
+#define NUM 1
+#define NAV 2
+#define FN  3
+
+/* Behaviors */
+
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    bindings = <&kp>, <&kp>;
+)
+
+/* keymap */
+
+ZMK_LAYER(default_layer,
+          &kp Q          &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
+          &hrm LSHFT A   &hrm LALT S   &hrm LGUI D   &hrm LCTRL F  &kp G             &kp H         &hrm LCTRL J  &hrm LGUI K   &hrm LALT L   &hrm LSHFT SQT 
+          &kp Z          &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH 
+                         &kp LCTRL                   &lt NUM SPACE                   &lt NAV SPACE                             &kp LGUI
+)
+
+ZMK_LAYER(num_layer,
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+               ___, ___, ___, ___
+)
+
+ZMK_LAYER(nav_layer,
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+               ___, ___, ___, ___
+)
+
+ZMK_LAYER(fn_layer,
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+___, ___, ___, ___, ___, ___, ___, ___, ___, ___, 
+               ___, ___, ___, ___
+)
