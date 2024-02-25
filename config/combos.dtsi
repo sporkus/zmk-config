@@ -9,18 +9,19 @@
 
 // use require-prior-idle-ms for combos
 #undef COMBO_HOOK
-#define COMBO_HOOK require-prior-idle-ms = <150>;
+#define COMBO_HOOK require-prior-idle-ms = <100>;
 
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
+#define COMBO_TERM_FAST 30
+#define COMBO_TERM_SLOW 80
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(esc,   &kp ESC,       LM3 LM2,            DEF NAV NUM, COMBO_TERM_FAST)
 ZMK_COMBO(tab,   &kp TAB,       LM2 LM1,            DEF NAV NUM, COMBO_TERM_FAST)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(enter,  &kp ENTER,     RM1 RM2,           DEF     NUM, COMBO_TERM_FAST)
-ZMK_COMBO(bspc,   &kp BSPC,      RM2 RM3,           DEF     NUM, COMBO_TERM_FAST)
+ZMK_COMBO(enter,  &kp ENTER,     RM1 RM2,           DEF NAV NUM, COMBO_TERM_FAST)
+ZMK_COMBO(bspc,   &kp BSPC,      RM2 RM3,           DEF NAV NUM, COMBO_TERM_FAST)
+ZMK_COMBO(semi,   &kp SEMI,      RM3 RM4,           DEF     NUM, COMBO_TERM_FAST)
 
 /* Vertical combos - left hand */
 ZMK_COMBO(lbkt,  &kp LBKT,      LT3 LM3,            DEF NAV NUM, COMBO_TERM_SLOW)
@@ -35,4 +36,4 @@ ZMK_COMBO(rbrc,  &kp RBRC,      RT2 RM2,            DEF NAV NUM, COMBO_TERM_SLOW
 ZMK_COMBO(rbkt,  &kp RBKT,      RT3 RM3,            DEF NAV NUM, COMBO_TERM_SLOW)
 
 /* Horizontal combos - both hands */
-ZMK_COMBO(esc,   &bootloader,  LT4 LT3 RT3 RT4,     DEF NAV NUM, COMBO_TERM_FAST)
+ZMK_COMBO(rst,   &bootloader,  LT4 LT3 RT3 RT4,     DEF NAV NUM, COMBO_TERM_FAST)
