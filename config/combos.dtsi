@@ -13,3 +13,23 @@
 
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
+
+/* Horizontal combos - left hand */
+ZMK_COMBO(esc,   &kp ESC,       LM3 LM2,     DEF NAV NUM, COMBO_TERM_FAST)
+ZMK_COMBO(tab,   &kp TAB,       LM2 LM1,     DEF NAV NUM, COMBO_TERM_FAST)
+
+/* Horizontal combos - right hand */
+ZMK_COMBO(enter,  &kp ENTER,     RM1 RM2,     DEF     NUM, COMBO_TERM_FAST)
+ZMK_COMBO(bspc,   &kp BSPC,      RM2 RM3,     DEF     NUM, COMBO_TERM_FAST)
+
+/* Vertical combos - left hand */
+ZMK_COMBO(lbkt,  &kp LBKT,      LT3 LM3,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lbrc,  &kp LBRC,      LT2 LM2,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lpar,  &kp LPAR,      LT1 LM1,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lt,    &kp LT,        LT0 LM0,     DEF NAV NUM, COMBO_TERM_SLOW)
+
+/* Vertical combos - right hand */
+ZMK_COMBO(gt,    &kp GT,        RT0 RM0,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(rpar,  &kp RPAR,      RT1 RM1,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(rbrc,  &kp RBRC,      RT2 RM2,     DEF NAV NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(rbkt,  &kp RBKT,      RT3 RM3,     DEF NAV NUM, COMBO_TERM_SLOW)
