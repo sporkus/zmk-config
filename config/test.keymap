@@ -1,4 +1,0 @@
-#include "./zmk-nodefree-config/helper.h"
-#include "./base.keymap"
-
-ZMK_LAYER(hello, L_TOP_ROW(_DEF))
