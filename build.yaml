@@ -1,1 +1,4 @@
-board: [ "vault35" ]
+---
+include:
+  - board: "vault35"
+  - board: "le_chiffre_stm32"
