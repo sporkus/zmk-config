@@ -57,16 +57,18 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 &trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
 &kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
 
-#define L_TOP_ROW(layer) _L_TOP_ROW(layer)
-#define R_TOP_ROW(layer) _R_TOP_ROW(layer)
-#define L_MID_ROW(layer) _L_MID_ROW(layer)
-#define R_MID_ROW(layer) _R_MID_ROW(layer)
-#define L_BOT_ROW(layer) _L_BOT_ROW(layer)
-#define R_BOT_ROW(layer) _R_BOT_ROW(layer)
 
-#define _L_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LTR
-#define _R_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RTR
-#define _L_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LMR
-#define _R_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RMR
-#define _L_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LBR
-#define _R_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RBR
+/* Needs the inner macro to expand the arguments */
+#define L_TOP_ROW(layer) L_TOP_ROW_INNER(layer)
+#define R_TOP_ROW(layer) R_TOP_ROW_INNER(layer)
+#define L_MID_ROW(layer) L_MID_ROW_INNER(layer)
+#define R_MID_ROW(layer) R_MID_ROW_INNER(layer)
+#define L_BOT_ROW(layer) L_BOT_ROW_INNER(layer)
+#define R_BOT_ROW(layer) R_BOT_ROW_INNER(layer)
+
+#define L_TOP_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LTR
+#define R_TOP_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RTR
+#define L_MID_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LMR
+#define R_MID_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RMR
+#define L_BOT_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LBR
+#define R_BOT_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RBR
