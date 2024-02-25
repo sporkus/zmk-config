@@ -11,6 +11,7 @@
 #include "./zmk-nodefree-config/keypos_def/keypos_vault35.h"
 #include "./base.keymap"
 
+
 /* keymap */
 
 ZMK_LAYER(default_layer,
@@ -19,7 +20,7 @@ ZMK_LAYER(default_layer,
     L_BOT_ROW(_DEF),                  R_BOT_ROW(_DEF),
     &kp LCTRL   &lt_hold NUM SPACE    &lt_tap NAV SPACE   &kp LGUI
 )
-
+/*
 ZMK_LAYER(num_layer,
     L_TOP_ROW(_NUM),                R_TOP_ROW(_NUM), &trans,
     L_MID_ROW(_NUM),                R_MID_ROW(_NUM),
@@ -40,3 +41,4 @@ ZMK_LAYER(fn_layer,
     L_BOT_ROW(_FN),                R_BOT_ROW(_FN),
           ___  ___                 ___  ___
 )
+/*

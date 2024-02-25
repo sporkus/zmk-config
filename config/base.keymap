@@ -37,7 +37,7 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 #define XXX &none
 #define ___ &trans
 
-#define _BASE \
+#define _DEF \
 &kp Q                 &kp W       &kp E       &kp R        &kp T,             &kp Y     &kp U        &kp I       &kp O       &kp P, \
 &hrm LSHFT A          &hrm LALT S &hrm LGUI D &hrm LCTRL F &kp G,             &kp H     &hrm LCTRL J &hrm LGUI K &hrm LALT L &hrm LSHFT SINGLE_QUOTE, \
 &shift_t LEFT_SHIFT Z &kp X       &kp C       &kp V        &kp B,             &kp N     &kp M        &kp COMMA   &kp DOT     &shift_t RIGHT_SHIFT SLASH
@@ -57,18 +57,16 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 &trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
 &kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
 
-/*
 #define L_TOP_ROW(layer) _L_TOP_ROW(layer)
 #define R_TOP_ROW(layer) _R_TOP_ROW(layer)
 #define L_MID_ROW(layer) _L_MID_ROW(layer)
 #define R_MID_ROW(layer) _R_MID_ROW(layer)
 #define L_BOT_ROW(layer) _L_BOT_ROW(layer)
 #define R_BOT_ROW(layer) _R_BOT_ROW(layer)
-*/
 
-#define L_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LTR
-#define R_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RTR
-#define L_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LMR
-#define R_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RMR
-#define L_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LBR
-#define R_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RBR
+#define _L_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LTR
+#define _R_TOP_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RTR
+#define _L_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LMR
+#define _R_MID_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RMR
+#define _L_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) LBR
+#define _R_BOT_ROW(LTR, RTR, LMR, RMR, LBR, RBR) RBR
