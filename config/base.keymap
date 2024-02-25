@@ -1,7 +1,7 @@
 #define DEF 0
 #define NUM 1
 #define NAV 2
-#define FN 3
+#define FUN 3
 
 #include "combos.dtsi"  // requires layer aliases
 
@@ -17,14 +17,14 @@ ZMK_BEHAVIOR(hrm, hold_tap, \
     hold-trigger-on-release; \
 )
 
-ZMK_BEHAVIOR(shift_t, hold_tap,
+ZMK_BEHAVIOR(sft, hold_tap,
     flavor = "hold-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <200>;
     bindings = <&kp>, <&kp>;
 )
 
-ZMK_BEHAVIOR(lt_tap, hold_tap,
+ZMK_BEHAVIOR(ltt, hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>; \
@@ -32,7 +32,7 @@ ZMK_BEHAVIOR(lt_tap, hold_tap,
     bindings = <&mo>, <&kp>;
 )
 
-ZMK_BEHAVIOR(lt_hold, hold_tap,
+ZMK_BEHAVIOR(lth, hold_tap,
     flavor = "hold-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <200>;
@@ -43,26 +43,37 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 
 #define XXX &none
 #define ___ &trans
+#define num_spc lth NUM SPACE
+#define nav_spc ltt NAV SPACE
 
+
+/* Define
+
+/* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _DEF \
-&kp Q                 &kp W       &kp E       &kp R        &kp T,             &kp Y     &kp U        &kp I       &kp O       &kp P, \
-&hrm LSHFT A          &hrm LALT S &hrm LGUI D &hrm LCTRL F &kp G,             &kp H     &hrm LCTRL J &hrm LGUI K &hrm LALT L &hrm LSHFT SINGLE_QUOTE, \
-&shift_t LEFT_SHIFT Z &kp X       &kp C       &kp V        &kp B,             &kp N     &kp M        &kp COMMA   &kp DOT     &shift_t RIGHT_SHIFT SLASH
-
+&kp Q,            &kp W,         &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
+&hrm LSHFT A,     &hrm LALT S,   &hrm LGUI D,     &hrm LCTRL F,   &kp G,             &kp H,          &hrm LCTRL J,   &hrm LGUI K,    &hrm LALT L,    &hrm LSHFT SQR, \
+&sft LSHFT Z,     &kp X,         &kp C,           &kp V,          &kp B,             &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &sft RSHFT SLASH, \
+                                                  &kp LCTRL,      &num_spc,          &nav_spc,       &kp LGUI
+/* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _NUM \
-&trans                &trans      &trans      &trans       &trans,            &kp EQUAL &kp N7       &kp N8      &kp N9      &kp N0, \
-&trans                &trans      &trans      &trans       &trans,            &kp MINUS &kp N4       &kp N5      &kp N6      &kp SEMI, \
-&trans                &trans      &trans      &trans       &trans,            &kp GRAVE &kp N1       &kp N2      &kp N3      &kp BSLH
-
+___,              ___,            ___,            ___,            ___,               &kp EQUAL,      &kp N7,         &kp N8,         &kp N9,         &kp N0, \
+___,              ___,            ___,            ___,            ___,               &kp MINUS,      &kp N4,         &kp N5,         &kp N6,         &kp SEMI, \
+___,              ___,            ___,            ___,            ___,               &kp GRAVE,      &kp N1,         &kp N2,         &kp N3,         &kp BSLH, \
+                                                  ___,            ___,               ___,            ___
+/* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _NAV \
-&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC), \
-&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
-&kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
-
-#define _FN \
-&kp LG(GRAVE)         &trans      &trans      &key_repeat  &kp LA(TAB),       &trans    &trans       &trans      &trans      &kp LC(BSPC), \
-&trans                &trans      &trans      &trans       &trans,            &kp LEFT  &kp DOWN     &kp UP      &kp RIGHT   &trans, \
-&kp LC(Z)             &kp LC(X)   &kp LC(INS) &kp LS(INS)  &trans,            &trans    &kp PG_DN    &kp PG_UP   &key_repeat &trans
+&kp LG(GRAVE),    ___,            ___,            &key_repeat,    &kp LA(TAB),       ___,            ___,            ___,            ___,            &kp LC(BSPC), \
+___,              ___,            ___,            ___,            ___,               &kp LEFT,       &kp DOWN,       &kp UP,         &kp RIGHT,      ___ , \
+&kp LC(Z),        &kp LC(X),      &kp LC(INS),    &kp LS(INS),    ___,               ___,            &kp PG_DN,      &kp PG_UP,      &key_repeat,    ___ , \
+                                                  ___,            ___,               ___,            ___
+/* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
+#define _FUN \
+&kp LG(GRAVE),    ___,            ___,            &key_repeat,    &kp LA(TAB),       ___,            ___,            ___,            ___,            &kp LC(BSPC), \
+___,              ___,            ___,            ___,            ___,               &kp LEFT,       &kp DOWN,       &kp UP,         &kp RIGHT,      ___ , \
+&kp LC(Z),        &kp LC(X),      &kp LC(INS),    &kp LS(INS),    ___,               ___,            &kp PG_DN,      &kp PG_UP,      &key_repeat,    ___ , \
+                                                  ___,            ___,               ___,            ___
+/* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 
 
 /* Needs the inner macro to expand the arguments */
@@ -72,10 +83,20 @@ ZMK_BEHAVIOR(lt_hold, hold_tap,
 #define R_MID_ROW(layer) R_MID_ROW_INNER(layer)
 #define L_BOT_ROW(layer) L_BOT_ROW_INNER(layer)
 #define R_BOT_ROW(layer) R_BOT_ROW_INNER(layer)
+#define L_TMB1(layer) L_TMB1_INNER(layer)
+#define L_TMB0(layer) L_TMB0_INNER(layer)
+#define R_TMB0(layer) R_TMB0_INNER(layer)
+#define R_TMB1(layer) R_TMB1_INNER(layer)
+#define ALL_34_KEYS(layer) ALL_34_KEYS_INNER(layer)
 
-#define L_TOP_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LTR
-#define R_TOP_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RTR
-#define L_MID_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LMR
-#define R_MID_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RMR
-#define L_BOT_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) LBR
-#define R_BOT_ROW_INNER(LTR, RTR, LMR, RMR, LBR, RBR) RBR
+#define L_TOP_ROW_INNER(K1, K2, K3, K4, K5, ...) K1 K2 K3 K4 K5
+#define R_TOP_ROW_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, ...) K6 K7 K8 K9 K10
+#define L_MID_ROW_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, ...) K11 K12 K13 K14 K15
+#define R_MID_ROW_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, ...) K16 K17 K18 K19 K20
+#define L_BOT_ROW_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, ...) K21 K22 K23 K24 K25
+#define R_BOT_ROW_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, ...) K26 K27 K28 K29 K30
+#define   L_TMB1_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K31
+#define   L_TMB0_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K32
+#define   R_TMB0_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K33
+#define   R_TMB1_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K34
+#define   ALL_34_KEYS_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18 K19 K20 K21 K22 K23 K24 K25 K26 K27 K28 K29 K30 K31 K32 K33 K34

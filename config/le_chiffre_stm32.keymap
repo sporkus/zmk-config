@@ -13,31 +13,7 @@
 
 
 /* keymap */
-
-ZMK_LAYER(default_layer,
-                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)
-                L_MID_ROW(_DEF)      R_MID_ROW(_DEF)
-                L_BOT_ROW(_DEF)      R_BOT_ROW(_DEF)
-    &kp LCTRL   &lt_hold NUM SPACE   &lt_tap NAV SPACE   &kp LGUI
-)
-
-ZMK_LAYER(num_layer,
-    L_TOP_ROW(_NUM)               R_TOP_ROW(_NUM)
-    L_MID_ROW(_NUM)               R_MID_ROW(_NUM)
-    L_BOT_ROW(_NUM)               R_BOT_ROW(_NUM)
-          ___  ___                ___  ___
-)
-
-ZMK_LAYER(nav_layer,
-    L_TOP_ROW(_NAV)               R_TOP_ROW(_NAV)
-    L_MID_ROW(_NAV)               R_MID_ROW(_NAV)
-    L_BOT_ROW(_NAV)               R_BOT_ROW(_NAV)
-          ___  ___                ___  ___
-)
-
-ZMK_LAYER(fn_layer,
-    L_TOP_ROW(_FN)                R_TOP_ROW(_FN)
-    L_MID_ROW(_FN)                R_MID_ROW(_FN)
-    L_BOT_ROW(_FN)                R_BOT_ROW(_FN)
-          ___  ___                ___  ___
-)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF))
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NUM))
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NAV))
+ZMK_LAYER(default_layer, ALL_34_KEYS(_FUN))

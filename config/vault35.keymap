@@ -15,29 +15,29 @@
 /* keymap */
 
 ZMK_LAYER(default_layer,
-                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)     &kp BSPC
+                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)             &kp BSPC
                 L_MID_ROW(_DEF)      R_MID_ROW(_DEF)
                 L_BOT_ROW(_DEF)      R_BOT_ROW(_DEF)
-    &kp LCTRL   &lt_hold NUM SPACE   &lt_tap NAV SPACE   &kp LGUI
+     L_TMB1(_DEF)  L_TMB0(_DEF)      R_TMB0(_DEF)  R_TMB1(_DEF)
 )
 
 ZMK_LAYER(num_layer,
-    L_TOP_ROW(_NUM)               R_TOP_ROW(_NUM)   &trans
-    L_MID_ROW(_NUM)               R_MID_ROW(_NUM)
-    L_BOT_ROW(_NUM)               R_BOT_ROW(_NUM)
-          ___  ___                ___  ___
+                L_TOP_ROW(_NUM)      R_TOP_ROW(_NUM)             &kp LC(BSPC)
+                L_MID_ROW(_NUM)      R_MID_ROW(_NUM)
+                L_BOT_ROW(_NUM)      R_BOT_ROW(_NUM)
+     L_TMB1(_NUM)  L_TMB0(_NUM)      R_TMB0(_NUM)  R_TMB1(_NUM)
 )
 
 ZMK_LAYER(nav_layer,
-    L_TOP_ROW(_NAV)               R_TOP_ROW(_NAV)   &trans
-    L_MID_ROW(_NAV)               R_MID_ROW(_NAV)
-    L_BOT_ROW(_NAV)               R_BOT_ROW(_NAV)
-          ___  ___                ___  ___
+                L_TOP_ROW(_NAV)      R_TOP_ROW(_NAV)    ___
+                L_MID_ROW(_NAV)      R_MID_ROW(_NAV)
+                L_BOT_ROW(_NAV)      R_BOT_ROW(_NAV)
+     L_TMB1(_NAV)  L_TMB0(_NAV)      R_TMB0(_NAV)  R_TMB1(_NAV)
 )
 
-ZMK_LAYER(fn_layer,
-    L_TOP_ROW(_FN)                R_TOP_ROW(_FN)    &trans
-    L_MID_ROW(_FN)                R_MID_ROW(_FN)
-    L_BOT_ROW(_FN)                R_BOT_ROW(_FN)
-          ___  ___                ___  ___
+ZMK_LAYER(fun_layer,
+                L_TOP_ROW(_FUN)      R_TOP_ROW(_FUN)              ___
+                L_MID_ROW(_FUN)      R_MID_ROW(_FUN)
+                L_BOT_ROW(_FUN)      R_BOT_ROW(_FUN)
+     L_TMB1(_FUN)  L_TMB0(_FUN)      R_TMB0(_FUN)  R_TMB1(_FUN)
 )
