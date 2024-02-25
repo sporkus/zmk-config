@@ -13,8 +13,15 @@ ZMK_BEHAVIOR(hrm, hold_tap, \
     tapping-term-ms = <280>; \
     quick-tap-ms = <QUICK_TAP_MS>; \
     require-prior-idle-ms = <180>; \
-    bindings = &kp, &kp; \
+    bindings = <&kp>, <&kp>; \
     hold-trigger-on-release; \
+)
+
+ZMK_BEHAVIOR(shift_t, hold_tap,
+    flavor = "hold-preferred";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <200>;
+    bindings = <&kp>, <&kp>;
 )
 
 ZMK_BEHAVIOR(lt_tap, hold_tap,
@@ -22,14 +29,14 @@ ZMK_BEHAVIOR(lt_tap, hold_tap,
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>; \
     require-prior-idle-ms = <180>; \
-    bindings = <&kp>, <&kp>;
+    bindings = <&mo>, <&kp>;
 )
 
 ZMK_BEHAVIOR(lt_hold, hold_tap,
     flavor = "hold-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <200>;
-    bindings = <&kp>, <&kp>;
+    bindings = <&mo>, <&kp>;
 )
 
 /* Layer helpers */
