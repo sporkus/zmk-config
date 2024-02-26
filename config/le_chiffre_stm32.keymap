@@ -15,7 +15,7 @@
     chosen {
         zmk,matrix_transform = &transform_with_encoder;
     };
-}
+};
 
 /* keymap */
 ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE)
