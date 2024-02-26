@@ -11,9 +11,14 @@
 #include "./zmk-nodefree-config/keypos_def/keypos_34keys.h"
 #include "./base.keymap"
 
+/ {
+    chosen {
+        zmk,matrix_transform = &transform_with_encoder;
+    };
+}
 
 /* keymap */
-ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF))
-ZMK_LAYER(default_layer, ALL_34_KEYS(_NUM))
-ZMK_LAYER(default_layer, ALL_34_KEYS(_NAV))
-ZMK_LAYER(default_layer, ALL_34_KEYS(_FUN))
+ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NUM)   ___)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NAV)   ___)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_FUN)   ___)
