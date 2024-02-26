@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#include "./zmk-nodefree-config/helper.h"
+#include "./zmk-nodefree-config/keypos_def/keypos_34keys.h"
+#include "./base.keymap"
+
+
+/* keymap
+
+/ {
+    chosen {
+        zmk,matrix_transform = &transform_with_encoder;
+    };
+};
+
+ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NUM)   ___)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_NAV)   ___)
+ZMK_LAYER(default_layer, ALL_34_KEYS(_FUN)   ___)
+*/
+
+
+ZMK_LAYER(default_layer,
+                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)
+                L_MID_ROW(_DEF)      R_MID_ROW(_DEF)
+                L_BOT_ROW(_DEF)      R_BOT_ROW(_DEF)
+     L_TMB1(_DEF)  L_TMB0(_DEF)      R_TMB0(_DEF)  R_TMB1(_DEF)
+)
+
+ZMK_LAYER(num_layer,
+                L_TOP_ROW(_NUM)      R_TOP_ROW(_NUM)
+                L_MID_ROW(_NUM)      R_MID_ROW(_NUM)
+                L_BOT_ROW(_NUM)      R_BOT_ROW(_NUM)
+     L_TMB1(_NUM)  L_TMB0(_NUM)      R_TMB0(_NUM)  R_TMB1(_NUM)
+)
+
+ZMK_LAYER(nav_layer,
+                L_TOP_ROW(_NAV)      R_TOP_ROW(_NAV)
+                L_MID_ROW(_NAV)      R_MID_ROW(_NAV)
+                L_BOT_ROW(_NAV)      R_BOT_ROW(_NAV)
+     L_TMB1(_NAV)  L_TMB0(_NAV)      R_TMB0(_NAV)  R_TMB1(_NAV)
+)
+
+ZMK_LAYER(fun_layer,
+                L_TOP_ROW(_FUN)      R_TOP_ROW(_FUN)
+                L_MID_ROW(_FUN)      R_MID_ROW(_FUN)
+                L_BOT_ROW(_FUN)      R_BOT_ROW(_FUN)
+     L_TMB1(_FUN)  L_TMB0(_FUN)      R_TMB0(_FUN)  R_TMB1(_FUN)
+)
