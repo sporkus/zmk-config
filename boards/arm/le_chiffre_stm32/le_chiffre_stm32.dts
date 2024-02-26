@@ -72,10 +72,10 @@
         , <&gpiof 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
         row-gpios
-        = <&gpioa 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpiob 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpiob 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpiob 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpioa 8  (GPIO_ACTIVE_HIGH)>
+        , <&gpiob 10 (GPIO_ACTIVE_HIGH)>
+        , <&gpiob 2 (GPIO_ACTIVE_HIGH)>
+        , <&gpiob 1 (GPIO_ACTIVE_HIGH)>
         ;
     };
 
