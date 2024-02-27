@@ -12,22 +12,23 @@
 #include "./base.keymap"
 
 
-/* keymap */
+/* overrides */
 / {
     chosen {
         zmk,matrix_transform = &transform_with_encoder;
 
     };
-
-    &encoder {
-        status = "okay";
-    };
-
-    &sensors {
-        status = "okay";
-    };
 };
 
+&encoder {
+    status = "okay";
+};
+
+&sensors {
+    status = "okay";
+};
+
+/* keymap */
 ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE, &inc_dec_kp C_VOL_UP C_VOL_DN)
 ZMK_LAYER(num_layer,     ALL_34_KEYS(_NUM)   ___)
 ZMK_LAYER(nav_layer,     ALL_34_KEYS(_NAV)   ___)
