@@ -28,8 +28,15 @@
     status = "okay";
 };
 
-/* keymap */
-ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE, &inc_dec_kp C_VOL_UP C_VOL_DN)
+/* keymap 
+Layers are either two or three args:
+- ZMK_LAYER(layer_name, keys)
+- ZMK_LAYER(layer_name, keys, encoder_funcs)
+
+Each layer needs an unique name
+*/
+
+ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF)   &kp C_MUTE, VOL_KNOB)
 ZMK_LAYER(num_layer,     ALL_34_KEYS(_NUM)   ___)
 ZMK_LAYER(nav_layer,     ALL_34_KEYS(_NAV)   ___)
 ZMK_LAYER(fun_layer,     ALL_34_KEYS(_FUN)   ___)

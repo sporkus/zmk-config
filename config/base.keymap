@@ -45,6 +45,7 @@ ZMK_BEHAVIOR(lth, hold_tap,
 #define ___ &trans
 #define num_spc lth NUM SPACE
 #define nav_spc ltt NAV SPACE
+#define VOL_KNOB &inc_dec_kp C_VOL_DN C_VOL_UP
 
 
 /* Define
