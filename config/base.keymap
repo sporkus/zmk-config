@@ -3,7 +3,6 @@
 #define NAV 2
 #define FUN 3
 
-#include "combos.dtsi"  // requires layer aliases
 
 /* Behaviors */
 #define QUICK_TAP_MS 220
@@ -41,8 +40,20 @@ ZMK_BEHAVIOR(lth, hold_tap,
 )
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS BSPC>;
 };
+
+/* Mod morphs 
+Need to reference them using node name instead of the regular keycodes
+e.g. &comm_semi instead of &kp COMMA
+*/
+ZMK_MODMORPH_SFT(comm_semi,      &kp COMMA,     &kp SEMI)
+ZMK_MODMORPH_SFT(dot_colon,      &kp DOT,       &kp COLON)
+ZMK_MODMORPH_SFT(rlbrc,          &kp RBRC,      &kp LBRC)
+ZMK_MODMORPH_SFT(rlpar,          &kp RPAR,      &kp LPAR)
+ZMK_MODMORPH_SFT(rlbkt,          &kp RBKT,      &kp LBKT)
+ZMK_MODMORPH_CTL(q_af4,          &kp Q,         &kp LA(F4))
+ZMK_MODMORPH_CA(ca_bspc,         &kp BSPC,      &kp LC(LA(DEL)))
 
 /* Layer helpers */
 
@@ -59,7 +70,7 @@ ZMK_BEHAVIOR(lth, hold_tap,
 #define _DEF \
 &kp Q,            &kp W,         &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
 &hrm LSHFT A,     &hrm LALT S,   &hrm LGUI D,     &hrm LCTRL F,   &kp G,             &kp H,          &hrm LCTRL J,   &hrm LGUI K,    &hrm LALT L,    &hrm LSHFT SQT, \
-&sft LSHFT Z,     &kp X,         &kp C,           &kp V,          &kp B,             &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &sft RSHFT SLASH, \
+&sft LSHFT Z,     &kp X,         &kp C,           &kp V,          &kp B,             &kp N,          &kp M,          &comm_semi,     &dot_colon,     &sft RSHFT SLASH, \
                                                   &kp LCTRL,      &num_spc,          &nav_spc,       &kp LGUI
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _NUM \
@@ -106,3 +117,5 @@ ___,              ___,            ___,            ___,            ___,          
 #define   R_TMB0_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K33
 #define   R_TMB1_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K34
 #define   ALL_34_KEYS_INNER(K1, K2, K3, K4, K5, K6, K7, K8, K9, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K30, K31, K32, K33, K34) K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18 K19 K20 K21 K22 K23 K24 K25 K26 K27 K28 K29 K30 K31 K32 K33 K34
+
+#include "combos.dtsi"  // requires layer aliases

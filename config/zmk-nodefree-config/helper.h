@@ -155,3 +155,21 @@
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
 
+/* MOD MORPHS*/
+#define MODS(mod) MOD_ ## L ## mod | MOD_## R ## mod
+#define MODS_CTL  MODS(CTL)
+#define MODS_ALT  MODS(ALT)
+#define MODS_SFT  MODS(SFT)
+#define MODS_GUI  MODS(GUI)
+
+#define ZMK_MODMORPH(_mods, name, binding, modded_binding) \
+    ZMK_BEHAVIOR(name, mod_morph, \
+        bindings = <binding>, <modded_binding>; \
+        mods = <(_mods)>; \
+    )
+
+#define ZMK_MODMORPH_SFT(name, binding, modded_binding) ZMK_MODMORPH(MODS(SFT), name, binding, modded_binding) 
+#define ZMK_MODMORPH_CTL(name, binding, modded_binding) ZMK_MODMORPH(MODS(CTL), name, binding, modded_binding) 
+#define ZMK_MODMORPH_ALT(name, binding, modded_binding) ZMK_MODMORPH(MODS(ALT), name, binding, modded_binding) 
+#define ZMK_MODMORPH_GUI(name, binding, modded_binding) ZMK_MODMORPH(MODS(GUI), name, binding, modded_binding) 
+#define ZMK_MODMORPH_CA(name, binding, modded_binding) ZMK_MODMORPH( (MOD_LCTL & MOD_LALT), name, binding, modded_binding) 
