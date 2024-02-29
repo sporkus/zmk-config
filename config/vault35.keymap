@@ -15,7 +15,7 @@
 /* keymap */
 
 ZMK_LAYER(default_layer,
-                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)             &ca_bspc 
+                L_TOP_ROW(_DEF)      R_TOP_ROW(_DEF)             &kp BSPC
                 L_MID_ROW(_DEF)      R_MID_ROW(_DEF)
                 L_BOT_ROW(_DEF)      R_BOT_ROW(_DEF)
      L_TMB1(_DEF)  L_TMB0(_DEF)      R_TMB0(_DEF)  R_TMB1(_DEF)

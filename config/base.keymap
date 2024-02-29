@@ -39,6 +39,10 @@ ZMK_BEHAVIOR(lth, hold_tap,
     bindings = <&mo>, <&kp>;
 )
 
+&key_repeat {
+    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+};
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS BSPC>;
 };
@@ -53,7 +57,6 @@ ZMK_MODMORPH_SFT(rlbrc,          &kp RBRC,      &kp LBRC)
 ZMK_MODMORPH_SFT(rlpar,          &kp RPAR,      &kp LPAR)
 ZMK_MODMORPH_SFT(rlbkt,          &kp RBKT,      &kp LBKT)
 ZMK_MODMORPH_CTL(q_af4,          &kp Q,         &kp LA(F4))
-ZMK_MODMORPH_CA(ca_bspc,         &kp BSPC,      &kp LC(LA(DEL)))
 
 /* Layer helpers */
 
@@ -68,7 +71,7 @@ ZMK_MODMORPH_CA(ca_bspc,         &kp BSPC,      &kp LC(LA(DEL)))
 
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _DEF \
-&kp Q,            &kp W,         &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
+&q_af4,            &kp W,         &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
 &hrm LSHFT A,     &hrm LALT S,   &hrm LGUI D,     &hrm LCTRL F,   &kp G,             &kp H,          &hrm LCTRL J,   &hrm LGUI K,    &hrm LALT L,    &hrm LSHFT SQT, \
 &sft LSHFT Z,     &kp X,         &kp C,           &kp V,          &kp B,             &kp N,          &kp M,          &comm_semi,     &dot_colon,     &sft RSHFT SLASH, \
                                                   &kp LCTRL,      &num_spc,          &nav_spc,       &kp LGUI
