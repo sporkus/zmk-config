@@ -2,3 +2,5 @@
 include:
   - board: "vault35"
   - board: "le_chiffre_stm32"
+  - board: sparkfun_pro_micro_rp2040
+    shield: "ffkb_lite"

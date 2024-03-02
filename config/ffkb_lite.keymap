@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#include "./zmk-nodefree-config/helper.h"
+#include "./zmk-nodefree-config/keypos_def/keypos_34keys.h"
+#include "./base.keymap"
+
+
+/* overrides */
+/ {
+    chosen {
+        zmk,matrix_transform = &transform_34;
+
+    };
+};
+
+/* keymap */
+ZMK_LAYER(default_layer, ALL_34_KEYS(_DEF))
+ZMK_LAYER(num_layer,     ALL_34_KEYS(_NUM))
+ZMK_LAYER(nav_layer,     ALL_34_KEYS(_NAV))
+ZMK_LAYER(fun_layer,     ALL_34_KEYS(_FUN))
+
+
