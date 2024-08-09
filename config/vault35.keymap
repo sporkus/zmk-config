@@ -29,7 +29,7 @@ ZMK_LAYER(num_layer,
 )
 
 ZMK_LAYER(nav_layer,
-                L_TOP_ROW(_NAV)      R_TOP_ROW(_NAV)    ___
+                L_TOP_ROW(_NAV)      R_TOP_ROW(_NAV)    &kp DEL
                 L_MID_ROW(_NAV)      R_MID_ROW(_NAV)
                 L_BOT_ROW(_NAV)      R_BOT_ROW(_NAV)
      L_TMB1(_NAV)  L_TMB0(_NAV)      R_TMB0(_NAV)  R_TMB1(_NAV)

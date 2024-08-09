@@ -47,7 +47,7 @@ ZMK_BEHAVIOR(lth, hold_tap,
     continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
-/* Mod morphs 
+/* Mod morphs
 Need to reference them using node name instead of the regular keycodes
 e.g. &comm_semi instead of &kp COMMA
 */
@@ -71,13 +71,13 @@ ZMK_MODMORPH_CTL(q_af4,          &kp Q,         &kp LA(F4))
 
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _DEF \
-&q_af4,            &kp W,         &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
+&q_af4,            &kp W,        &kp E,           &kp R,          &kp T,             &kp Y,          &kp U,          &kp I,          &kp O,          &kp P, \
 &hrm LSHFT A,     &hrm LALT S,   &hrm LGUI D,     &hrm LCTRL F,   &kp G,             &kp H,          &hrm LCTRL J,   &hrm LGUI K,    &hrm LALT L,    &hrm LSHFT SQT, \
 &sft LSHFT Z,     &kp X,         &kp C,           &kp V,          &kp B,             &kp N,          &kp M,          &comm_semi,     &dot_colon,     &sft RSHFT SLASH, \
                                                   &kp LCTRL,      &num_spc,          &nav_spc,       &kp LGUI
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _NUM \
-___,              ___,            ___,            ___,            ___,               &kp EQUAL,      &kp N7,         &kp N8,         &kp N9,         &kp N0, \
+&mo FUN,          ___,            ___,            ___,            ___,               &kp EQUAL,      &kp N7,         &kp N8,         &kp N9,         &kp N0, \
 ___,              ___,            ___,            ___,            ___,               &kp MINUS,      &kp N4,         &kp N5,         &kp N6,         &kp SEMI, \
 ___,              ___,            ___,            ___,            ___,               &kp GRAVE,      &kp N1,         &kp N2,         &kp N3,         &kp BSLH, \
                                                   ___,            ___,               ___,            ___
@@ -89,9 +89,9 @@ ___,              ___,            ___,            ___,            ___,          
                                                   ___,            ___,               ___,            ___
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 #define _FUN \
-&kp LG(GRAVE),    ___,            ___,            &key_repeat,    &kp LA(TAB),       ___,            ___,            ___,            ___,            &kp LC(BSPC), \
-___,              ___,            ___,            ___,            ___,               &kp LEFT,       &kp DOWN,       &kp UP,         &kp RIGHT,      ___ , \
-&kp LC(Z),        &kp LC(X),      &kp LC(INS),    &kp LS(INS),    ___,               ___,            &kp PG_DN,      &kp PG_UP,      &key_repeat,    ___ , \
+___,              ___,            ___,            ___,            ___,               ___,            &kp F7,         &kp F8,         &kp F9,         &kp F10, \
+___,              ___,            ___,            ___,            ___,               ___,            &kp F4,         &kp F5,         &kp F6,         &kp F11, \
+___,              ___,            ___,            ___,            ___,               ___,            &kp F1,         &kp F2,         &kp F3,         &kp F12, \
                                                   ___,            ___,               ___,            ___
 /* --------------|---------------|---------------|---------------|---------------||||---------------|---------------|---------------|---------------|--------------- */
 
