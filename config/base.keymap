@@ -7,13 +7,13 @@
 /* Behaviors */
 #define QUICK_TAP_MS 220
 
-ZMK_BEHAVIOR(hrm, hold_tap, \
-    flavor = "balanced"; \
-    tapping-term-ms = <280>; \
-    quick-tap-ms = <QUICK_TAP_MS>; \
-    require-prior-idle-ms = <200>; \
-    bindings = <&kp>, <&kp>; \
-    hold-trigger-on-release; \
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <200>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-on-release;
 )
 
 ZMK_BEHAVIOR(sft, hold_tap,
@@ -27,8 +27,8 @@ ZMK_BEHAVIOR(sft, hold_tap,
 ZMK_BEHAVIOR(ltt, hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>; \
-    require-prior-idle-ms = <150>; \
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <150>;
     bindings = <&mo>, <&kp>;
 )
 
