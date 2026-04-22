@@ -45,3 +45,4 @@ ZMK_COMBO(next,      &kp C_NEXT,     RM3 RB3,            DEF        , COMBO_TERM
 ZMK_COMBO(capsword,  &caps_word,     LM1 RM1,             DEF        , COMBO_TERM_FAST)
 ZMK_COMBO(ctlaltdel, &kp LC(LA(DEL)),LM3 LM1 RM2 RM3,     DEF        , COMBO_TERM_FAST)
 ZMK_COMBO(rst,       &bootloader,    LT4 LT3 RT3 RT4,     DEF NAV NUM, COMBO_TERM_FAST)
+ZMK_COMBO(studio,    &studio_unlock, LT4 LT3 LT2 RT2 RT3 RT4, DEF NAV NUM, COMBO_TERM_FAST)

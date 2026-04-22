@@ -1,4 +1,6 @@
 ---
 include:
   - board: "vault35"
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: "le_chiffre_stm32"
